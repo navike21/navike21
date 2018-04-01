@@ -1,12 +1,12 @@
 * { font-family: "Quicksand", sans-serif; }
 
-.degradado { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-repeat: repeat-y; background-size: 100%; }
+.degradado { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-repeat: repeat-y; background-size: 100%; background-position: center; background-attachment: fixed; }
 
-a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado_hover.svg"); background-repeat: repeat-y; background-size: 100%; }
+a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado_hover.svg"); background-repeat: repeat-y; background-size: 100%; background-position: center; background-attachment: fixed; }
 
 @media all and (min-width: 1px) { .banner_principal { background-position: center; background-repeat: no-repeat; background-size: cover; height: 40vh; margin-bottom: 2vh; }
   p { color: #808080; font-size: 1.8rem; text-align: justify; }
-  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 19vw; text-align: center; min-width: 100px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
+  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 100px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
   .bienvenida p { text-align: center; width: 100%; }
   h2 { font-size: 4rem; text-transform: uppercase; font-weight: 400; }
   h2 strong { color: #003268; font-weight: 400; }
