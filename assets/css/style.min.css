@@ -16,15 +16,17 @@ h2 strong{color:#003268;font-weight:400}
 .to_work p{text-align:center;color:#fff;width:100%}
 .to_work .enlace_towork{border:1px solid #fff;color:#fff;letter-spacing:2px}
 .to_work .enlace_towork:hover{background-color:#fff;color:#003268}
-#capacidades div{position:relative;padding:10vh 0;min-width:140px}
+#capacidades div{position:relative;padding:6vh 0;min-width:140px}
 #capacidades div h3{position:absolute;bottom:4vh;left:0;right:0;margin:auto;font-size:1.4rem;text-transform:capitalize;font-weight:700}
 #capacidades div img{width:78%;margin:auto}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}
 .bienvenida p{text-align:center}
+#capacidades div{padding:20vh 0}
 }
 @media all and (min-width:801px){
 .banner_principal{height:100vh;margin-bottom:5vh}
 .bienvenida p{text-align:center}
+#capacidades div{padding:10vh 0}
 }
