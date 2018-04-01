@@ -186,7 +186,7 @@ function capacidades() {
 	register_sidebar( array(
 		'name'          => 'Capacidades',
 		'id'            => 'capacidades',
-		'before_widget' => '<div class="w_20 section_middle_center">',
+		'before_widget' => '<div class="w_13 section_middle_center">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>',

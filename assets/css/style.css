@@ -20,8 +20,9 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
   .to_work p { text-align: center; color: #ffffff; width: 100%; }
   .to_work .enlace_towork { border: 1px solid #ffffff; color: #ffffff; letter-spacing: 2px; }
   .to_work .enlace_towork:hover { background-color: #ffffff; color: #003268; }
-  #capacidades { width: 18% !important; position: relative; padding: 10vh 0; }
-  #capacidades h3 { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; } }
+  #capacidades div { position: relative; padding: 10vh 0; }
+  #capacidades div h3 { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; }
+  #capacidades div img { width: 80%; margin: auto; } }
 @media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; }
   .bienvenida p { text-align: center; } }
 @media all and (min-width: 801px) { .banner_principal { height: 100vh; margin-bottom: 5vh; }
