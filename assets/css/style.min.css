@@ -4,7 +4,7 @@ a.degradado:hover{background-image:url(https://navike21.com/wp-content/uploads/2
 @media all and (min-width:1px){
 .banner_principal{background-position:center;background-repeat:no-repeat;background-size:cover;height:40vh;margin-bottom:2vh}
 p{color:grey;font-size:1.8rem;text-align:justify}
-.enlace{font-size:1.4rem;padding:2vh 0;width:5%;text-align:center;min-width:100px;color:#fff;margin:7vh auto;text-transform:uppercase}
+.enlace{font-size:1.4rem;padding:2vh 0;width:19vw;text-align:center;min-width:100px;color:#fff;margin:7vh auto;text-transform:uppercase}
 .bienvenida p{text-align:center;width:100%}
 h2{font-size:4rem;text-transform:uppercase;font-weight:400}
 h2 strong{color:#003268;font-weight:400}
@@ -17,9 +17,7 @@ h2 strong{color:#003268;font-weight:400}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}
-.enlace{padding:15px 12vw}
 }
 @media all and (min-width:801px){
 .banner_principal{height:100vh;margin-bottom:5vh}
-.enlace{padding:1.9vh 5vw}
 }
