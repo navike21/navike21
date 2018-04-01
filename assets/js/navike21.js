@@ -12,4 +12,6 @@ $( document ).ready( function() {
         centrar_aside_under( $(this).width() );
     });
     centrar_aside_under( $( window ).width() );
+
+    $(".textwidget").addClass('w_100 section_top_center');
 });
