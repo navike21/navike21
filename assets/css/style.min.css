@@ -4,15 +4,15 @@ a.degradado:hover{background-image:url(https://navike21.com/wp-content/uploads/2
 @media all and (min-width:1px){
 .banner_principal{background-position:center;background-repeat:no-repeat;background-size:cover;height:40vh;margin-bottom:2vh}
 p{color:grey;font-size:1.8rem;text-align:justify}
-.enlace{font-size:1.4rem;padding:2vh 12vw;color:#fff;margin:7vh auto}
+.enlace{font-size:1.4rem;padding:2vh 0;width:5%;text-align:center;min-width:100px;color:#fff;margin:7vh auto;text-transform:uppercase}
 .bienvenida p{text-align:center;width:100%}
 h2{font-size:4rem;text-transform:uppercase;font-weight:400}
-h2 strong{color:#003268}
+h2 strong{color:#003268;font-weight:400}
 .to_work{background-image:url(https://navike21.com/wp-content/uploads/2018/03/degradado.svg);background-size:100%;background-repeat:repeat-y;padding-top:7vh}
 .to_work h3{color:#fff;font-size:4rem;width:100%;text-align:center;font-weight:400}
-.to_work h4{color:#fff;font-size:2.2rem;width:100%;text-align:center;font-weight:400}
+.to_work h4{color:#fff;font-size:2.2rem;width:100%;text-align:center;font-weight:400;margin:3vh auto}
 .to_work p{text-align:center;color:#fff}
-.to_work .enlace_towork{border:1px solid #fff;color:#fff;letter-spacing:2px;text-transform:uppercase}
+.to_work .enlace_towork{border:1px solid #fff;color:#fff;letter-spacing:2px}
 .to_work .enlace_towork:hover{background-color:#fff;color:#003268}
 }
 @media all and (orientation:landscape){
