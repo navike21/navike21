@@ -33,7 +33,6 @@
         <article class="w_100 section_top_center bienvenida">';
             the_content();
     echo '
-            <a href="/about/" class="degradado enlace">'.$rss_ver_mas.'</a>
         </article>
         <div class="w_100 section_middle_center">';
 
