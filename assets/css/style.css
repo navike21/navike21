@@ -2,19 +2,23 @@
 
 .degradado { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-repeat: repeat-y; background-size: 106%; background-position: center; }
 
+h1, h2, h3, h4 { text-align: center; width: 100%; text-transform: uppercase; font-weight: 400; }
+
 a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado_hover.svg"); background-repeat: repeat-y; background-size: 106%; background-position: center; }
 
 @media all and (min-width: 1px) { .banner_principal { background-position: center; background-repeat: no-repeat; background-size: cover; height: 40vh; margin-bottom: 2vh; }
   p { color: #808080; font-size: 1.8rem; text-align: justify; }
-  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 100px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
-  .bienvenida p { text-align: center; width: 100%; }
-  h2 { font-size: 4rem; text-transform: uppercase; font-weight: 400; }
+  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 180px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
+  .bienvenida p { width: 100%; }
+  h2 { font-size: 4rem; }
   h2 strong { color: #003268; font-weight: 400; }
-  .to_work { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-size: 100%; background-repeat: repeat-y; padding-top: 7vh; }
-  .to_work h3 { color: #ffffff; font-size: 4rem; width: 100%; text-align: center; font-weight: 400; }
-  .to_work h4 { color: #ffffff; font-size: 2.2rem; width: 100%; text-align: center; font-weight: 400; margin: 3vh auto; }
+  .to_work { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-size: 130%; background-repeat: repeat-y; padding-top: 7vh; }
+  .to_work h3 { color: #ffffff; font-size: 4rem; }
+  .to_work h4 { color: #ffffff; font-size: 2.2rem; margin: 3vh auto; }
   .to_work p { text-align: center; color: #ffffff; }
   .to_work .enlace_towork { border: 1px solid #ffffff; color: #ffffff; letter-spacing: 2px; }
   .to_work .enlace_towork:hover { background-color: #ffffff; color: #003268; } }
-@media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; } }
-@media all and (min-width: 801px) { .banner_principal { height: 100vh; margin-bottom: 5vh; } }
+@media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; }
+  .bienvenida p { text-align: center; } }
+@media all and (min-width: 801px) { .banner_principal { height: 100vh; margin-bottom: 5vh; }
+  .bienvenida p { text-align: center; } }
