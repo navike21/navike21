@@ -76,7 +76,7 @@ add_action( 'after_setup_theme', 'custom_logo' );
 // Cargar Hojas de estilos
 function custom_css(){
 	wp_enqueue_style('Quicksand', "https://fonts.googleapis.com/css?family=Quicksand:400,700&amp;subset=latin-ext", false, '1.0', 'all');
-	wp_enqueue_style('bastemp', "https://bastemp.com/css/bastemp.min.css", 'Quicksand', '1.0.2', 'all');
+	wp_enqueue_style('bastemp', "https://bastemp.com/css/bastemp.min.css", 'Quicksand', '1.1.2', 'all');
 
     //VALIDAMOS LA CARGA DE ARCHIVOS SOLO PARA EL UNDER CONSTRUCTION
     if ( is_page_template( 'page-under-construction.php' ) ) {
@@ -103,7 +103,7 @@ function custom_scripts() {
 
 	// Registramos Bastemp
 	wp_deregister_script( 'bastemp' );
-	wp_register_script( 'bastemp', 'https://bastemp.com/js/bastemp.min.js', false, '1.0.2"', false );
+	wp_register_script( 'bastemp', 'https://bastemp.com/js/bastemp.min.js', false, '1.1.2"', false );
 	wp_enqueue_script( 'bastemp' );
 
 	// Registramos navike21 css
