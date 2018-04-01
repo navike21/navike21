@@ -177,3 +177,20 @@ function to_work() {
 
 }
 add_action( 'widgets_init', 'to_work' );
+
+/**
+ * CAPACIDADES
+ **/
+function capacidades() {
+
+	register_sidebar( array(
+		'name'          => 'Capacidades',
+		'id'            => 'capacidades',
+		'before_widget' => '<div class="w_100 section_middle_center">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'capacidades' );
