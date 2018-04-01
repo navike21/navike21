@@ -16,8 +16,8 @@ h2 strong{color:#003268;font-weight:400}
 .to_work p{text-align:center;color:#fff;width:100%}
 .to_work .enlace_towork{border:1px solid #fff;color:#fff;letter-spacing:2px}
 .to_work .enlace_towork:hover{background-color:#fff;color:#003268}
-.to_work #capacidades>div{width:18%;position:relative;padding:10vh 0}
-.to_work #capacidades>div h3{position:absolute;bottom:0;left:0;right:0;margin:auto}
+.to_work #capacidades div{width:18%;position:relative;padding:10vh 0}
+.to_work #capacidades div h3{position:absolute;bottom:0;left:0;right:0;margin:auto}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}
