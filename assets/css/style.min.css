@@ -6,8 +6,14 @@ a.degradado:hover{background-image:url(https://navike21.com/wp-content/uploads/2
 p{color:grey;font-size:1.8rem;text-align:justify}
 .enlace{font-size:1.4rem;padding:2vh 12vw;color:#fff;margin:7vh auto}
 .bienvenida p{text-align:center;width:100%}
-h2{font-size:4rem}
+h2{font-size:4rem;text-transform:uppercase}
 h2 strong{color:#003268}
+.to_work{background-image:url(https://navike21.com/wp-content/uploads/2018/03/degradado.svg);background-size:100%;background-repeat:repeat-y}
+.to_work h3{color:#fff;font-size:4rem}
+.to_work h4{color:#fff;font-size:2.2rem}
+.to_work p{text-align:center;color:#fff}
+.to_work .enlace_towork{border:1px solid #fff;color:#fff}
+.to_work .enlace_towork:hover{background-color:#fff;color:#003268}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}

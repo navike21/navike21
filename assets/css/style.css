@@ -8,8 +8,14 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
   p { color: #808080; font-size: 1.8rem; text-align: justify; }
   .enlace { font-size: 1.4rem; padding: 2vh 12vw; color: #ffffff; margin: 7vh auto; }
   .bienvenida p { text-align: center; width: 100%; }
-  h2 { font-size: 4rem; }
-  h2 strong { color: #003268; } }
+  h2 { font-size: 4rem; text-transform: uppercase; }
+  h2 strong { color: #003268; }
+  .to_work { background-image: url("https://navike21.com/wp-content/uploads/2018/03/degradado.svg"); background-size: 100%; background-repeat: repeat-y; }
+  .to_work h3 { color: #ffffff; font-size: 4rem; }
+  .to_work h4 { color: #ffffff; font-size: 2.2rem; }
+  .to_work p { text-align: center; color: #ffffff; }
+  .to_work .enlace_towork { border: 1px solid #ffffff; color: #ffffff; }
+  .to_work .enlace_towork:hover { background-color: #ffffff; color: #003268; } }
 @media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; }
   .enlace { padding: 15px 12vw; } }
 @media all and (min-width: 801px) { .banner_principal { height: 100vh; margin-bottom: 5vh; }

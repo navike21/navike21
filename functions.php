@@ -143,6 +143,7 @@ function recent_works() {
 
 }
 add_action( 'widgets_init', 'recent_works' );
+
 /**
  * LASTEST POST HOME
  **/
@@ -159,3 +160,20 @@ function recent_post() {
 
 }
 add_action( 'widgets_init', 'recent_post' );
+
+/**
+ * PRE FOOTER
+ **/
+function to_work() {
+
+	register_sidebar( array(
+		'name'          => 'Let´s Go to work',
+		'id'            => 'to_work',
+		'before_widget' => '<div class="w_100 section_middle_center">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'to_work' );

@@ -24,7 +24,7 @@
         $rss_ver_todo   = $pods_rss->display('ver-todo');
         $rss_leeme      = $pods_rss->display('leeme');
         $rss_ubicacion  = $pods_rss->display('ubicacion');
-        $rss_contactame = $pods_rss->display('linkedin');
+        $rss_contactame = $pods_rss->display('contactame');
     }
 
     echo '
@@ -49,8 +49,14 @@
     echo '
         </div>
     </div>
+    <div class="w_100 to_work section_top_center">';
+        if ( is_active_sidebar( 'to_work' ) ) {
+            dynamic_sidebar( 'to_work' );
+            echo '<a href="/contact/" class="enlace_towork enlace">'.$rss_contactame.'</a>';
+        }
+    echo '
+    </div>
     ';
-
 
     get_footer(); // Obtener el Footer del web site
 ?>
