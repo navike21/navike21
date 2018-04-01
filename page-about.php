@@ -34,7 +34,7 @@
             the_content();
     echo '
         </article>
-        <div class="w_100 section_middle_center">';
+        <div id="capacidades" class="w_100 section_middle_center">';
 
         if ( is_active_sidebar( 'capacidades' ) ) {
             dynamic_sidebar( 'capacidades' );
