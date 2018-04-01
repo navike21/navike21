@@ -76,14 +76,14 @@ add_action( 'after_setup_theme', 'custom_logo' );
 // Cargar Hojas de estilos
 function custom_css(){
 	wp_enqueue_style('Quicksand', "https://fonts.googleapis.com/css?family=Quicksand:400,700&amp;subset=latin-ext", false, '1.0', 'all');
-	wp_enqueue_style('bastemp', "https://bastemp.com/css/bastemp.css", 'Quicksand', '1.0.2', 'all');
+	wp_enqueue_style('bastemp', "https://bastemp.com/css/bastemp.min.css", 'Quicksand', '1.0.2', 'all');
 
     //VALIDAMOS LA CARGA DE ARCHIVOS SOLO PARA EL UNDER CONSTRUCTION
     if ( is_page_template( 'page-under-construction.php' ) ) {
-        wp_enqueue_style('under', get_bloginfo('template_url').'/assets/css/under.css','bastemp', '1.0', 'all');
+        wp_enqueue_style('under', get_bloginfo('template_url').'/assets/css/under.min.css','bastemp', '1.0', 'all');
     }
     else{
-        wp_enqueue_style('style', get_bloginfo('template_url').'/assets/css/style.css','bastemp', '1.0', 'all');
+        wp_enqueue_style('style', get_bloginfo('template_url').'/assets/css/style.min.css','bastemp', '1.0', 'all');
     }
 }
 add_action('wp_print_styles', 'custom_css');
