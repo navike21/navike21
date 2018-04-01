@@ -11,7 +11,7 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
 @media all and (min-width: 1px) { .banner_principal { background-position: center; background-repeat: no-repeat; background-size: cover; height: 40vh; margin-bottom: 2vh; }
   p { color: #808080; font-size: 1.6rem; text-align: justify; }
   .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 180px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
-  .bienvenida p { width: 100%; margin: 5vh auto; }
+  .bienvenida p { width: 100%; margin: 3vh auto 1.5vh; }
   h2 { font-size: 4rem; margin: 5vh auto; }
   h2 strong { color: #003268; font-weight: 400; }
   .to_work { background-image: url("https://navike21.com/wp-content/uploads/2018/04/degradado.svg"); background-size: 150%; background-repeat: repeat-y; padding-top: 7vh; }
@@ -20,9 +20,9 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
   .to_work p { text-align: center; color: #ffffff; width: 100%; }
   .to_work .enlace_towork { border: 1px solid #ffffff; color: #ffffff; letter-spacing: 2px; }
   .to_work .enlace_towork:hover { background-color: #ffffff; color: #003268; }
-  #capacidades div { position: relative; padding: 10vh 0; }
-  #capacidades div h3 { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; }
-  #capacidades div img { width: 80%; margin: auto; } }
+  #capacidades div { position: relative; padding: 10vh 0; min-width: 140px; }
+  #capacidades div h3 { position: absolute; bottom: 4vh; left: 0; right: 0; margin: auto; font-size: 1.4rem; text-transform: capitalize; font-weight: 700; }
+  #capacidades div img { width: 78%; margin: auto; } }
 @media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; }
   .bienvenida p { text-align: center; } }
 @media all and (min-width: 801px) { .banner_principal { height: 100vh; margin-bottom: 5vh; }
