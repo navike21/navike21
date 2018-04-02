@@ -44,6 +44,10 @@
     echo '
     </div>
     ';
-
+    if ( has_post_thumbnail() ) :
+    	echo '<a href="'.the_permalink().'" title="'.the_title_attribute().'">
+    	<img src="'.the_post_thumbnail_url().'"/>
+    	</a>';
+    endif;
     get_footer(); // Obtener el Footer del web site
 ?>
