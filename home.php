@@ -1,10 +1,7 @@
 <?php
-    /**
-    * Template Name: Page blog
-    */
     get_header(); //Header Web site
     //Featured image;
-    $url_img_destacada = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+    $url_img_destacada = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
     //REDES SOCIALES
     $name_pod = "redes-sociales";
@@ -28,10 +25,10 @@
     }
 
     echo '
-    <div class="w_100 banner_principal" style="background-image: url('.$url_img_destacada[0].')"></div>
+    <div class="w_100 banner_principal" style="background-image: url('.$url_img_destacada.')"></div>
     <div class="w_80">
-        <article class="w_100 section_top_center bienvenida">s';
-
+        <article class="w_100 section_top_center bienvenida">';
+            the_content();
     echo '
         </article>
         <div id="works" class="w_100 section_middle_center">';
