@@ -1,6 +1,6 @@
 <?php
     /**
-    * Template Name: Page Works
+    * Template Name: Page blog
     */
     get_header(); //Header Web site
     //Featured image;
