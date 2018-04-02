@@ -14,8 +14,8 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
   p { color: #808080; font-size: 1.6rem; text-align: justify; margin: 3.5vh auto 1.75vh; }
   .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 180px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
   .bienvenida p { width: 100%; }
-  h2 { font-size: 4rem; margin: 10vh auto !important; }
-  h2 strong { color: #003268; font-weight: 700; }
+  h1, h2 { font-size: 4rem; margin: 10vh auto !important; }
+  h1 strong, h2 strong { color: #003268; font-weight: 700; }
   .to_work { background-image: url("https://navike21.com/wp-content/uploads/2018/04/degradado.svg"); background-size: 150%; background-repeat: repeat-y; padding-top: 7vh; }
   .to_work h3 { color: #ffffff; font-size: 4rem; }
   .to_work h4 { color: #ffffff; font-size: 2.2rem; margin: 3vh auto; }
