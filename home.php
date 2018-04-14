@@ -1,7 +1,7 @@
 <?php
     get_header(); //Header Web site
     //Featured image;
-    $url_img_destacada = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
+    echo $url_img_destacada = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
     //REDES SOCIALES
     $name_pod = "redes-sociales";
@@ -24,7 +24,7 @@
         $rss_contactame = $pods_rss->display('contactame');
     }
 
-    echo '
+    echo 'fff
     <div class="w_100 banner_principal" style="background-image: url('.$url_img_destacada.')"></div>
     <div class="w_80">
         <article class="w_100 section_top_center bienvenida">';
