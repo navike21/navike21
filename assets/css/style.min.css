@@ -21,8 +21,9 @@ h1 strong,h2 strong{color:#003268;font-weight:700}
 #capacidades div{position:relative;padding:6vh 0;min-width:90px}
 #capacidades div h3{position:absolute;bottom:0;left:0;right:0;margin:auto;font-size:1.4rem;text-transform:capitalize;font-weight:700}
 #capacidades div img{width:78%;margin:auto}
-.ultimo_post h3{font-weight:700;width:100%;text-align:left}
+.ultimo_post h3{font-weight:700;width:100%;text-align:left;margin-top:0;margin-bottom:0}
 .ultimo_post h2{font-size:1.6rem;width:100%;text-align:left}
+.ultimo_post .contenido_reciente{margin-bottom:5vh}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}
