@@ -45,7 +45,7 @@
                 }
                 echo '  <div class="w_49 contenido_wrapp">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
-                        <div class="w_100 align_justify contenido_reciente">'.wp_trim_words( strip_tags( $recent["post_content"], '<p><h2><a>' ), 55 ).'</div>
+                        <div class="w_100 align_justify contenido_reciente">'.wp_trim_words( $recent["post_content"], 55 ).'</div>
                         <a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>
                         </div>';
 
