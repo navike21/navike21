@@ -106,7 +106,12 @@ function custom_scripts() {
 	wp_register_script( 'bastemp', 'https://bastemp.com/js/bastemp.min.js', false, '1.1.2"', false );
 	wp_enqueue_script( 'bastemp' );
 
-	// Registramos navike21 css
+	// Registramos Jpaginate
+	wp_deregister_script( 'jpaginate' );
+	wp_register_script( 'jpaginate', get_bloginfo('template_url').'/assets/js/jpaginate.min.js', false, '1.0', false );
+	wp_enqueue_script( 'jpaginate' );
+
+    // Registramos navike21
 	wp_deregister_script( 'navike21' );
 	wp_register_script( 'navike21', get_bloginfo('template_url').'/assets/js/navike21.min.js', false, '1.0', false );
 	wp_enqueue_script( 'navike21' );

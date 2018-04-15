@@ -14,4 +14,9 @@ $( document ).ready( function() {
     centrar_aside_under( $( window ).width() );
 
     $(".textwidget").addClass('w_100 section_top_center');
+
+    var other_post = $("#other_post").html();
+    if (other_post != undefined) {
+        $("#other_post").jPaginate();
+    }
 });
