@@ -43,7 +43,7 @@
                     echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
                     //the_post_thumbnail('thumbnail');
                 }
-                echo '  <div class="w_49">
+                echo '  <div class="w_49 contenido_wrapp">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
                         <div class="w_100 align_justify contenido_reciente">'.$recent["post_content"].'</div>
                         <a href="'.get_permalink($recent["ID"]).'" class="degradado enlace">Read more</a>
