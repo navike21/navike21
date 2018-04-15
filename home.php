@@ -11,6 +11,7 @@
     $pods_rss = pods($name_pod, $parametr);
     if ( 0 < $pods_rss->total() ) {
 		$pods_rss->fetch();
+        $portada_blog   = $pods_rss->display('portada_blog');
         $rss_facebook   = $pods_rss->display('facebook');
         $rss_twitter    = $pods_rss->display('twitter');
         $rss_instagram  = $pods_rss->display('instagram');
@@ -24,8 +25,8 @@
         $rss_contactame = $pods_rss->display('contactame');
     }
 
-    echo 'ffd
-    <div class="w_100 banner_principal" style="background-image: url('.$url_img_destacada.')"></div>
+    echo '
+    <div class="w_100 banner_principal" style="background-image: url('.$portada_blog.')"></div>
     <div class="w_80">
         <article class="w_100 section_top_center bienvenida">';
             the_content();
@@ -44,10 +45,5 @@
     echo '
     </div>
     ';
-    //if ( has_post_thumbnail() ) :
-    	echo '<a href="'.the_permalink().'" title="'.the_title_attribute().'">
-    	<img src="'.the_post_thumbnail_url().'"/>
-    	</a>';
-    //endif;
     get_footer(); // Obtener el Footer del web site
 ?>
