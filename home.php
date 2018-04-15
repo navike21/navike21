@@ -47,7 +47,7 @@
                 $arreglo = explode("", $recent["post_content"]);
                 $num = 10;
                 for( $i = 0; $i <= $num - 1; $i++ ) {
-                    $contenido_reciente = $contenido_reciente.$arreglo[$i]."";
+                    echo $arreglo[$i]." ";
                 }
                 echo '  <div class="w_49 contenido_wrapp">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
