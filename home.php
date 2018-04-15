@@ -31,16 +31,23 @@
         <article class="w_100 section_top_center bienvenida">
             <h2>Blog</h2>
             <section class="w_100 section_top_justify">';
-            $args = array( 'numberposts' => '5' );
+            $args = array(
+                'numberposts'   => '1',
+                'order'         => 'DESC'
+            );
 
             $recent_posts = wp_get_recent_posts($args);
             foreach( $recent_posts as $recent ){
-                echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
                 if ( has_post_thumbnail( has_post_thumbnail( $recent["ID"] ) ) ) {
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
-                    echo $image[0];
+                    echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
                     //the_post_thumbnail('thumbnail');
                 }
+                echo '  <div class="w_49">
+                        <h3>'.$recent["post_title"].'</h3>
+                        <a href="'.get_permalink($recent["ID"]).'">Read more</a>
+                        </div>';
+                //echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
             }
 
     echo'   </section>';
