@@ -24,7 +24,7 @@
         $rss_contactame = $pods_rss->display('contactame');
     }
 
-    echo 'fff
+    echo 'ffd
     <div class="w_100 banner_principal" style="background-image: url('.$url_img_destacada.')"></div>
     <div class="w_80">
         <article class="w_100 section_top_center bienvenida">';
