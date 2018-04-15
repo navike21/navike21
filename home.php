@@ -45,8 +45,11 @@
                 }
                 echo '  <div class="w_49">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
-                        <a href="'.get_permalink($recent["ID"]).'" class="enlace">Read more</a>
+                        <div>'.$recent["post_content"].'</div>
+                        <div>'.the_content().'</div>
+                        <a href="'.get_permalink($recent["ID"]).'" class="degradado enlace">Read more</a>
                         </div>';
+
                 //echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
             }
 
