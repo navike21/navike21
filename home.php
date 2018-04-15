@@ -31,20 +31,13 @@
         <article class="w_100 section_top_center bienvenida">
             <h2>Blog</h2>
             <section class="w_100 section_top_justify">';
-            $args = array(
-                // 'category_name' => 'Pic of the Week',
-                // 'posts_per_page' => 1,
-                'order_by' => 'date',
-                'order' => 'desc'
-            );
+            $args = array( 'numberposts' => '5' );
 
-            $post = get_posts( $args );
-            if($post) {
-                $post_id = $post[0]->ID;
-                if(has_post_thumbnail($post_id)){
-                    // use one of these
-                    echo get_the_post_thumbnail($page->ID, 'thumbnail');
-                    echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
+            $recent_posts = wp_get_recent_posts($args);
+            foreach( $recent_posts as $recent ){
+                echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
+                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                    the_post_thumbnail('thumbnail');
                 }
             }
 
