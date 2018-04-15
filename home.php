@@ -30,7 +30,7 @@
     <div class="w_80">
         <article class="w_100 section_top_center bienvenida">
             <h2>Blog</h2>
-            <section class="w_100 section_top_justify">';
+            <section class="ultimo_post w_100 section_top_justify">';
             $args = array(
                 'numberposts'   => '1',
                 'order'         => 'DESC'
