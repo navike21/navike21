@@ -43,8 +43,9 @@
                     echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
                     //the_post_thumbnail('thumbnail');
                 }
+                echo $contenido = $recent["post_content"];
                 $contenido_reciente = "";
-                $arreglo = explode("", $recent["post_content"]);
+                $arreglo = explode("", $contenido);
                 $num = 10;
                 for( $i = 0; $i <= $num - 1; $i++ ) {
                     echo $arreglo[$i]." ";
