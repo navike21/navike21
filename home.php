@@ -43,10 +43,14 @@
                     echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
                     //the_post_thumbnail('thumbnail');
                 }
+                $more_last_post = '<a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>';
+                //CANTIDAD DE PALABRAS MANTENIENDO EL FORMAT HTML
+                // force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) )
+
                 echo '  <div class="w_49 contenido_wrapp">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
-                        <div class="w_100 align_justify contenido_reciente">'.wp_trim_words( $recent["post_content"], 55 ).'</div>
-                        <a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>
+                        <div class="w_100 align_justify contenido_reciente">'.force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) ).'</div>
+
                         </div>';
 
                 //echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
