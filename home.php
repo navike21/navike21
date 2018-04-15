@@ -43,9 +43,15 @@
                     echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
                     //the_post_thumbnail('thumbnail');
                 }
+                $contenido_reciente = "";
+                $arreglo = explode("", $recent["post_content"]);
+                $num = 10;
+                for( $i = 0; $i <= $num - 1; $i++ ) {
+                    $contenido_reciente += $arreglo[$i]." ";
+                }
                 echo '  <div class="w_49 contenido_wrapp">
                         <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
-                        <div class="w_100 align_justify contenido_reciente">'.$recent["post_content"].'</div>
+                        <div class="w_100 align_justify contenido_reciente">'.$contenido_reciente.'</div>
                         <a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>
                         </div>';
 
