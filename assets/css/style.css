@@ -12,7 +12,7 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
 
 @media all and (min-width: 1px) { .banner_principal { background-position: center; background-repeat: no-repeat; background-size: cover; height: 40vh; margin-bottom: 2vh; }
   p { color: #808080; font-size: 1.6rem; text-align: justify; margin: 3.5vh auto 1.75vh; }
-  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 180px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; }
+  .enlace { font-size: 1.4rem; padding: 2vh 0; width: 18vw; text-align: center; min-width: 180px; color: #ffffff; margin: 7vh auto; text-transform: uppercase; display: block; }
   .bienvenida p { width: 100%; }
   h1, h2 { font-size: 4rem; margin-top: 10vh; margin-bottom: 10vh; margin-left: auto; margin-right: auto; }
   h1 strong, h2 strong { color: #003268; font-weight: 700; }
