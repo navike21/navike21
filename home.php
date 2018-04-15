@@ -36,8 +36,10 @@
             $recent_posts = wp_get_recent_posts($args);
             foreach( $recent_posts as $recent ){
                 echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
-                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                    the_post_thumbnail('thumbnail');
+                if ( has_post_thumbnail( has_post_thumbnail( $recent["ID"] ) ) ) {
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
+                    echo $image[0];
+                    //the_post_thumbnail('thumbnail');
                 }
             }
 
