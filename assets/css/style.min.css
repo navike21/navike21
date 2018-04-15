@@ -26,6 +26,11 @@ h1 strong,h2 strong{color:#003268;font-weight:700}
 .other_post .portada_last_post,.ultimo_post .portada_last_post{height:45vh;background-position:center;background-repeat:no-repeat;background-size:cover}
 .other_post .contenido_reciente,.other_post .contenido_wrapp,.ultimo_post .contenido_reciente,.ultimo_post .contenido_wrapp{margin-bottom:5vh}
 .other_post .contenido_wrapp a,.ultimo_post .contenido_wrapp a{font-size:1.4rem;padding:2vh 0;width:10vw;text-align:center;min-width:180px;color:#fff;display:block}
+.other_post article{margin:1vh 0}
+.other_post article .portada_last_post{border:1px solid grey}
+.other_post article .contenido_reciente{font-size:1.4rem}
+.other_post article h3{font-size:1.8rem}
+.other_post article h2{font-size:1.4rem}
 }
 @media all and (orientation:landscape){
 .banner_principal{height:90vh;margin-bottom:5vh}
