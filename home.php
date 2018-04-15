@@ -28,8 +28,9 @@
     echo '
     <div class="w_100 banner_principal" style="background-image: url('.$portada_blog.')"></div>
     <div class="w_80">
-        <article class="w_100 section_top_center bienvenida">';
-            the_content();
+        <article class="w_100 section_top_center bienvenida">
+            <h2>Blog</h2>';
+
     echo '
         </article>
         <div id="works" class="w_100 section_middle_center">';
