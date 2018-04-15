@@ -35,8 +35,9 @@ a.degradado:hover { background-image: url("https://navike21.com/wp-content/uploa
   .other_post article { margin: 1vh 0; }
   .other_post article .portada_last_post { height: 30vh; }
   .other_post article .contenido_reciente { font-size: 1.4rem; }
-  .other_post article h3 { font-size: 1.8rem; }
-  .other_post article h2 { font-size: 1.4rem; } }
+  .other_post article h3 { font-size: 1.8rem; height: 50px; }
+  .other_post article h2 { font-size: 1.4rem; }
+  .other_post article .contenido_wrapp a { width: 7vw; min-width: 130px; } }
 @media all and (orientation: landscape) { .banner_principal { height: 90vh; margin-bottom: 5vh; }
   .bienvenida p { text-align: center; }
   #capacidades div { padding: 8vh 0 15vh; }

@@ -56,9 +56,9 @@
     echo'   </section>';
     echo '
         </article>
-        <div id="works" class="w_100 section_top_justify other_post">';
+        <div id="other_post" class="w_100 section_top_justify other_post">';
         $args2 = array(
-            'numberposts'   => '12',
+            'numberposts'   => '30',
             'order'         => 'DESC'
         );
 
@@ -73,7 +73,7 @@
                     echo '<div class="w_100 portada_last_post" style="background-image: url('.$image[0].')"></div>';
                 }
                 $more_last_post = '...';
-                $limit_words = 40;
+                $limit_words = 35;
 
                 echo '  <div class="w_100 contenido_wrapp">
                             <h3 class="align_left w_100">'.$recent2["post_title"].'</h3>
