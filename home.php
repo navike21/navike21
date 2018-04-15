@@ -40,20 +40,20 @@
             foreach( $recent_posts as $recent ){
                 if ( has_post_thumbnail( has_post_thumbnail( $recent["ID"] ) ) ) {
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
-                    echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
+                    // echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
+                    echo '<div class="w_48 portada_last_post" style="background-image: url('.$image[0].')"></div>';
                     //the_post_thumbnail('thumbnail');
                 }
-                $more_last_post = '<a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>';
+                $more_last_post = '...';
+                $limit_words = 60;
                 //CANTIDAD DE PALABRAS MANTENIENDO EL FORMAT HTML
                 // force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) )
 
                 echo '  <div class="w_49 contenido_wrapp">
-                        <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
-                        <div class="w_100 align_justify contenido_reciente">'.force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) ).'</div>
-
+                            <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
+                            <div class="w_100 align_justify contenido_reciente">'.force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), $limit_words, $more_last_post ) ) ).'</div>
+                            <a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>
                         </div>';
-
-                //echo '<li><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a> </li> ';
             }
 
     echo'   </section>';
