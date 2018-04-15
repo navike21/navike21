@@ -38,21 +38,19 @@
 
             $recent_posts = wp_get_recent_posts($args);
             foreach( $recent_posts as $recent ){
-                if ( has_post_thumbnail( has_post_thumbnail( $recent["ID"] ) ) ) {
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
-                    // echo '<img src="'.$image[0].'" width="49%" alt="'.$image[1].'">';
+                $id_last_post = $recent["ID"];
+                if ( has_post_thumbnail( has_post_thumbnail( $id_last_post ) ) ) {
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id_last_post ), 'single-post-thumbnail' );
                     echo '<div class="w_48 portada_last_post" style="background-image: url('.$image[0].')"></div>';
-                    //the_post_thumbnail('thumbnail');
                 }
                 $more_last_post = '...';
                 $limit_words = 60;
                 //CANTIDAD DE PALABRAS MANTENIENDO EL FORMAT HTML
                 // force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) )
-
                 echo '  <div class="w_49 contenido_wrapp">
                             <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
                             <div class="w_100 align_justify contenido_reciente">'.force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), $limit_words, $more_last_post ) ) ).'</div>
-                            <a href="'.get_permalink($recent["ID"]).'" class="degradado">'.$rss_ver_mas.'</a>
+                            <a href="'.get_permalink( $id_last_post ).'" class="degradado">'.$rss_ver_mas.'</a>
                         </div>';
             }
 
@@ -60,7 +58,33 @@
     echo '
         </article>
         <div id="works" class="w_100 section_middle_center">';
+        $args = array(
+            'numberposts'   => '12',
+            'order'         => 'DESC'
+        );
 
+        $last_no = 0;
+
+        $recent_posts = wp_get_recent_posts($args);
+        foreach( $recent_posts as $recent ){
+            if ($last_no != 0) {
+                $id_last_post = $recent["ID"];
+                if ( has_post_thumbnail( has_post_thumbnail( $id_last_post ) ) ) {
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id_last_post ), 'single-post-thumbnail' );
+                    echo '<div class="w_48 portada_last_post" style="background-image: url('.$image[0].')"></div>';
+                }
+                $more_last_post = '...';
+                $limit_words = 60;
+                //CANTIDAD DE PALABRAS MANTENIENDO EL FORMAT HTML
+                // force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), 50, $more_last_post ) ) )
+                echo '  <div class="w_49 contenido_wrapp">
+                            <h3 class="align_left w_100">'.$recent["post_title"].'</h3>
+                            <div class="w_100 align_justify contenido_reciente">'.force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( get_the_content() ), $limit_words, $more_last_post ) ) ).'</div>
+                            <a href="'.get_permalink( $id_last_post ).'" class="degradado">'.$rss_ver_mas.'</a>
+                        </div>';
+                $last_no ++;
+            }
+        }
     echo '
         </div>
     </div>
