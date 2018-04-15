@@ -33,7 +33,7 @@
             <section class="w_100 section_top_justify">';
             $args = array(
                 // 'category_name' => 'Pic of the Week',
-                'posts_per_page' => 1,
+                // 'posts_per_page' => 1,
                 'order_by' => 'date',
                 'order' => 'desc'
             );
