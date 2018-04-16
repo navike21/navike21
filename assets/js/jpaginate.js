@@ -1,204 +1,228 @@
-// jPaginate Plugin for jQuery
-// by Angel Grablev for Enavu Web Development network (enavu.com)
-// Dual license under MIT and GPL :) enjoy
 /*
-
-To use simply call .paginate() on the element you wish like so:
-$("#content").jPaginate(); 
-
-you can specify the following options:
-items = number of items to have per page on pagination
-next = the text you want to have inside the text button
-previous = the text you want in the previous button
-active = the class you want the active paginaiton link to have
-pagination_class = the class of the pagination element that is being generated for you to style
-minimize = minimizing will limit the overall number of elements in the pagination links
-nav_items = when minimize is set to true you can specify how many items to show
-cookies = if you want to use cookies to remember which page the user is on, true by default
-
+* jQuery easyShare plugin
+* Update on 04 april 2017
+* Version 1.2
+*
+* Licensed under GPL <http://en.wikipedia.org/wiki/GNU_General_Public_License>
+* Copyright (c) 2008, St?hane Litou <contact@mushtitude.com>
+* All rights reserved.
+*
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-(function($){
-    $.fn.jPaginate = function(options) {
-        var defaults = {
-            items: 4,
-            next: "Next",
-            previous: "Previous",
-            active: "active",
-            pagination_class: "pagination",
-            minimize: false,
-            nav_items: 6,
-			cookies: true
-        };
-        var options = $.extend(defaults, options);
 
-        return this.each(function() {
-            // object is the selected pagination element list
-            obj = $(this);
-            // this is how you call the option passed in by plugin of items
-            var show_per_page = options.items;
-            //getting the amount of elements inside parent element
-            var number_of_items = obj.children().size();
-            //calculate the number of pages we are going to have
-            var number_of_pages = Math.ceil(number_of_items/show_per_page);
-            
-            //create the pages of the pagination
-            var array_of_elements = [];
-            var numP = 0;
-            var nexP = show_per_page;
-            //loop through all pages and assign elements into array
-            for (i=1;i<=number_of_pages;i++)
-            {    
-                array_of_elements[i] = obj.children().slice(numP, nexP);
-                numP += show_per_page;
-                nexP += show_per_page;
+(function($){
+$.fn.easyPaginate = function (options) {
+    var defaults = {
+        paginateElement: 'li',
+        hashPage: 'page',
+        elementsPerPage: 10,
+        effect: 'default',
+        slideOffset: 200,
+        firstButton: true,
+        firstButtonText: '<<',
+        lastButton: true,
+        lastButtonText: '>>',
+        prevButton: true,
+        prevButtonText: '<',
+        nextButton: true,
+        nextButtonText: '>'
+    }
+
+    return this.each (function (instance) {
+
+        var plugin = {};
+        plugin.el = $(this);
+        plugin.el.addClass('easyPaginateList');
+
+        plugin.settings = {
+            pages: 0,
+            objElements: Object,
+            currentPage: 1
+        }
+
+        var getNbOfPages = function() {
+            return Math.ceil(plugin.settings.objElements.length / plugin.settings.elementsPerPage);
+        };
+
+        var displayNav = function() {
+            htmlNav = '<div class="easyPaginateNav">';
+
+            if(plugin.settings.firstButton) {
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':1" title="First page" rel="1" class="first">'+plugin.settings.firstButtonText+'</a>';
             }
-            
-            // display first page and set first cookie
-			if (options.cookies == true) {
-				if (get_cookie("current")) {
-					showPage(get_cookie("current"));
-					createPagination(get_cookie("current"));
-				} else {
-					set_cookie( "current", "1");
-					showPage(get_cookie("current"));
-					createPagination(get_cookie("current"));
-				}
-			} else {
-				showPage(1);
-				createPagination(1);
-			}
-            //show selected page
-            function showPage(page) {
-                obj.children().hide();
-                array_of_elements[page].show();
+
+            if(plugin.settings.prevButton) {
+                htmlNav += '<a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a>';
             }
-            
-            // create the navigation for the pagination 
-            function createPagination(curr) {
-                var start, items = "", end, nav = "";
-                start = "<ul class='"+options.pagination_class+"'>";
-                var previous = "<li><a class='goto_previous' href='#'>"+options.previous+"</a></li>";
-                var next = "<li><a class='goto_next' href='#'>"+options.next+"</a></li>";
-				var previous_inactive = "<li><a class='inactive'>"+options.previous+"</a></li>";
-                var next_inactive = "<li><a class='inactive'>"+options.next+"</a></li>";
-                end = "</ul>"
-                var after = number_of_pages - options.after + 1;
-                var pagi_range = paginationCalculator(curr);
-				for (i=1;i<=number_of_pages;i++)
-                {
-                    if (options.minimize == true) {
-						var half = Math.ceil(number_of_pages/2)
-                    	if (i >= pagi_range.start && i <= pagi_range.end) {
-							if (i == curr) { items += '<li><a class="'+options.active+'" title="'+i+'">'+i+'</a></li>';} 
-                        	else { items += '<li><a href="#" class="goto" title="'+i+'">'+i+'</a></li>';}
-						} else if (curr <= half) {
-							if (i >= (number_of_pages - 2)) {
-								if (i == curr) { items += '<li><a class="'+options.active+'" title="'+i+'">'+i+'</a></li>';} 
-                        		else { items += '<li><a href="#" class="goto" title="'+i+'">'+i+'</a></li>';}
-							} 
-						} else if (curr >= half) {
-							if (i <= 2) {
-								if (i == curr) { items += '<li><a class="'+options.active+'" title="'+i+'">'+i+'</a></li>';} 
-                        		else { items += '<li><a href="#" class="goto" title="'+i+'">'+i+'</a></li>';}
-							}
-						}
-                    } else {
-                        if (i == curr) { items += '<li><a class="'+options.active+'" title="'+i+'">'+i+'</a></li>';} 
-                        else { items += '<li><a href="#" class="goto" title="'+i+'">'+i+'</a></li>';}
-                    }
+
+            for(i = 1;i <= plugin.settings.pages;i++) {
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
+            };
+
+            if(plugin.settings.nextButton) {
+                htmlNav += '<a href="" title="Next" rel="" class="next">'+plugin.settings.nextButtonText+'</a>';
+            }
+
+            if(plugin.settings.lastButton) {
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+plugin.settings.pages+'" title="Last page" rel="'+plugin.settings.pages+'" class="last">'+plugin.settings.lastButtonText+'</a>';
+            }
+
+            htmlNav += '</div>';
+            plugin.nav = $(htmlNav);
+            plugin.nav.css({
+                'width': plugin.el.width()
+            });
+            plugin.el.after(plugin.nav);
+
+            var elSelector = '#' + plugin.el.get(0).id + ' + ';
+            $(elSelector + ' .easyPaginateNav a.page,'
+                + elSelector + ' .easyPaginateNav a.first,'
+                + elSelector + ' .easyPaginateNav a.last').on('click', function(e) {
+                e.preventDefault();
+                displayPage($(this).attr('rel'));
+            });
+
+            $(elSelector + ' .easyPaginateNav a.prev').on('click', function(e) {
+                e.preventDefault();
+                page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
+                displayPage(page);
+            });
+
+            $(elSelector + ' .easyPaginateNav a.next').on('click', function(e) {
+                e.preventDefault();
+                page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
+                displayPage(page);
+            });
+        };
+
+        var displayPage = function(page, forceEffect) {
+            if(plugin.settings.currentPage != page) {
+                plugin.settings.currentPage = parseInt(page);
+                offsetStart = (page - 1) * plugin.settings.elementsPerPage;
+                offsetEnd = page * plugin.settings.elementsPerPage;
+                if(typeof(forceEffect) != 'undefined') {
+                    eval("transition_"+forceEffect+"("+offsetStart+", "+offsetEnd+")");
+                }else {
+                    eval("transition_"+plugin.settings.effect+"("+offsetStart+", "+offsetEnd+")");
                 }
-                if (curr != 1 && curr != number_of_pages) {
-                    nav = start + previous + items + next + end;
-                } else if (curr == number_of_pages){
-                    nav = start + previous + items + next_inactive + end;
-                } else if (curr == 1) {
-                    nav = start + previous_inactive + items + next + end;
+
+                plugin.nav.find('.current').removeClass('current');
+                plugin.nav.find('a.page:eq('+(page - 1)+')').addClass('current');
+
+                switch(plugin.settings.currentPage) {
+                    case 1:
+                        $('.easyPaginateNav a', plugin).removeClass('disabled');
+                        $('.easyPaginateNav a.first, .easyPaginateNav a.prev', plugin).addClass('disabled');
+                        break;
+                    case plugin.settings.pages:
+                        $('.easyPaginateNav a', plugin).removeClass('disabled');
+                        $('.easyPaginateNav a.last, .easyPaginateNav a.next', plugin).addClass('disabled');
+                        break;
+                    default:
+                        $('.easyPaginateNav a', plugin).removeClass('disabled');
+                        break;
                 }
-                obj.after(nav);
             }
-			
-			/* code to handle cookies */
-			function set_cookie( name, value ) {		  
-			  $.cookie(name, value);
-			}
-			function get_cookie ( cookie_name )	{
-			 	return $.cookie(cookie_name);
-			}
-            
-			function paginationCalculator(curr)  {
-				var half = Math.floor(options.nav_items/2);
-				var upper_limit = number_of_pages - options.nav_items;
-				var start = curr > half ? Math.max( Math.min(curr - half, upper_limit), 0 ) : 0;
-				var end = curr > half?Math.min(curr + half + (options.nav_items % 2), number_of_pages):Math.min(options.nav_items, number_of_pages);
-				return {start:start, end:end};
-			}
-			
-            // handle click on pagination 
-            $(".goto").live("click", function(e){
-                e.preventDefault();
-                showPage($(this).attr("title"));
-				set_cookie( "current", $(this).attr("title"));
-                $(".pagination").remove();
-                createPagination($(this).attr("title"));
+        };
+
+        var transition_default = function(offsetStart, offsetEnd) {
+            plugin.currentElements.hide();
+            plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+            plugin.el.html(plugin.currentElements);
+            plugin.currentElements.show();
+        };
+
+        var transition_fade = function(offsetStart, offsetEnd) {
+            plugin.currentElements.fadeOut();
+            plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+            plugin.el.html(plugin.currentElements);
+            plugin.currentElements.fadeIn();
+        };
+
+        var transition_slide = function(offsetStart, offsetEnd) {
+            plugin.currentElements.animate({
+                'margin-left': plugin.settings.slideOffset * -1,
+                'opacity': 0
+            }, function() {
+                $(this).remove();
             });
-            $(".goto_next").live("click", function(e) {
-                e.preventDefault();
-                var act = "."+options.active;
-                var newcurr = parseInt($(".pagination").find(".active").attr("title")) + 1;
-                set_cookie( "current", newcurr);
-				showPage(newcurr);
-                $(".pagination").remove();
-                createPagination(newcurr);
+
+            plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+            plugin.currentElements.css({
+                'margin-left': plugin.settings.slideOffset,
+                'display': 'block',
+                'opacity': 0,
+                'min-width': plugin.el.width() / 2
             });
-            $(".goto_previous").live("click", function(e) {
-                e.preventDefault();
-                var act = "."+options.active;
-                var newcurr = parseInt($(".pagination").find(".active").attr("title")) - 1;
-				set_cookie( "current", newcurr);
-                showPage(newcurr);
-                $(".pagination").remove();
-                createPagination(newcurr);
+            plugin.el.html(plugin.currentElements);
+            plugin.currentElements.animate({
+                'margin-left': 0,
+                'opacity': 1
             });
-        });
-        
-       
-    };
-	jQuery.cookie = function(name, value, options) {
-		if (typeof value != 'undefined') { // name and value given, set cookie
-			options = options || {};
-			if (value === null) {
-				value = '';
-				options.expires = -1;
-			}
-			var expires = '';
-			if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
-				var date;
-				if (typeof options.expires == 'number') {
-					date = new Date();
-					date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
-				} else {
-					date = options.expires;
-				}
-				expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
-			}
-			var path = options.path ? '; path=' + (options.path) : '';
-			var domain = options.domain ? '; domain=' + (options.domain) : '';
-			var secure = options.secure ? '; secure' : '';
-			document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-		} else { // only name given, get cookie
-			var cookieValue = null;
-			if (document.cookie && document.cookie != '') {
-				var cookies = document.cookie.split(';');
-				for (var i = 0; i < cookies.length; i++) {
-					var cookie = jQuery.trim(cookies[i]);
-					// Does this cookie string begin with the name we want?
-					if (cookie.substring(0, name.length + 1) == (name + '=')) {
-						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-						break;
-					}
-				}
-			}
-			return cookieValue;
-		}
-	};
+        };
+
+        var transition_climb = function(offsetStart, offsetEnd) {
+            plugin.currentElements.each(function(i) {
+                var $objThis = $(this);
+                setTimeout(function() {
+                    $objThis.animate({
+                        'margin-left': plugin.settings.slideOffset * -1,
+                        'opacity': 0
+                    }, function() {
+                        $(this).remove();
+                    });
+                }, i * 200);
+            });
+
+            plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+            plugin.currentElements.css({
+                'margin-left': plugin.settings.slideOffset,
+                'display': 'block',
+                'opacity': 0,
+                'min-width': plugin.el.width() / 2
+            });
+            plugin.el.html(plugin.currentElements);
+            plugin.currentElements.each(function(i) {
+                var $objThis = $(this);
+                setTimeout(function() {
+                    $objThis.animate({
+                        'margin-left': 0,
+                        'opacity': 1
+                    });
+                }, i * 200);
+            });
+        };
+
+        plugin.settings = $.extend({}, defaults, options);
+
+        plugin.currentElements = $([]);
+        plugin.settings.objElements = plugin.el.find(plugin.settings.paginateElement);
+        plugin.settings.pages = getNbOfPages();
+        if(plugin.settings.pages > 1) {
+            plugin.el.html();
+
+            // Here we go
+            displayNav();
+
+            page = 1;
+            if(document.location.hash.indexOf('#'+plugin.settings.hashPage+':') != -1) {
+                page = parseInt(document.location.hash.replace('#'+plugin.settings.hashPage+':', ''));
+                if(page.length <= 0 || page < 1 || page > plugin.settings.pages) {
+                    page = 1;
+                }
+            }
+
+            displayPage(page, 'default');
+        }
+    });
+};
 })(jQuery);

@@ -17,6 +17,10 @@ $( document ).ready( function() {
 
     var other_post = $("#other_post").html();
     if (other_post != undefined) {
-        $("#other_post").jPaginate();
+        $("#other_post").easyPaginate({
+            paginateElement: 'article',
+            elementsPerPage: 3,
+            effect: 'climb'
+        });
     }
 });
