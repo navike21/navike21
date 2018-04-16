@@ -19,8 +19,8 @@ $( document ).ready( function() {
     if (other_post != undefined) {
         $("#other_post").easyPaginate({
             paginateElement: 'article',
-            elementsPerPage: 3,
-            effect: 'climb'
+            elementsPerPage: 6,
+            effect: 'fade'
         });
     }
 });

@@ -108,7 +108,7 @@ function custom_scripts() {
 
 	// Registramos Jpaginate
 	wp_deregister_script( 'jpaginate' );
-	wp_register_script( 'jpaginate', get_bloginfo('template_url').'/assets/js/jpaginate.min.js', false, '1.0', false );
+	wp_register_script( 'jpaginate', get_bloginfo('template_url').'/assets/js/jpaginate.min.js', false, '1.1', false );
 	wp_enqueue_script( 'jpaginate' );
 
     // Registramos navike21
