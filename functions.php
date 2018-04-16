@@ -113,7 +113,7 @@ function custom_scripts() {
 
     // Registramos navike21
 	wp_deregister_script( 'navike21' );
-	wp_register_script( 'navike21', get_bloginfo('template_url').'/assets/js/navike21.min.js', false, '1.0', false );
+	wp_register_script( 'navike21', get_bloginfo('template_url').'/assets/js/navike21.min.js', false, '1.1', false );
 	wp_enqueue_script( 'navike21' );
 
 	// // Registramos Bastemp
